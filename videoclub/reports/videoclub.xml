@@ -1,0 +1,14 @@
+<odoo>
+    <data>
+        <report
+            id="report_videoclubs"
+            model="videoclub.videoclub"
+            string="Informe"
+            name="videoclub.report_videoclub_view"
+            file="videoclub.report_videoclub"
+            menu="True"
+            report_type="qweb-pdf"
+        />
+        
+    </data>
+</odoo>

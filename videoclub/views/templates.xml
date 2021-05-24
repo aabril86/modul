@@ -1,0 +1,52 @@
+<odoo>
+    <data>
+      <template id="report_videoclub_view">
+          <t t-call="web.html_container">
+              <t t-foreach="docs" t-as="doc">
+                      <t t-call="web.external_layout">           
+                          <div class="page">
+                              <h2>Videoclubs</h2>
+                              <p>Nombre: <span t-field="doc.nom"/></p>
+                              <p>Direcció: <span t-field="doc.direccio"/></p>                        
+                              <p>Propietari: <span t-field="doc.propietari"/></p>      
+                              <p>Logo: <img t-attf-src="data:image/jpg;base64,{{doc.logo}}" style="align:left; width:100px;height:100px;"/></p>
+                              <p>Telèfon: <span t-field="doc.phone"/></p>
+                              <p>Data obertura: <span t-field="doc.obertura"/></p>
+                              <p>Número socis: <span t-field="doc.socis"/></p>
+
+                              <h2>Pel·lícules</h2>
+                                <t t-foreach="doc.pelicules" t-as="pelicules">
+                                  <p>Nom: <span t-field="pelicules.nombre"/></p>
+                                  <p>Director: <span t-field="pelicules.director"/></p>
+                                  <p>Gènere: <span t-field="pelicules.genere"/></p>
+                                  <p>Data: <span t-field="pelicules.data"/></p>
+                                </t>                          
+                                                                                        
+                          </div>
+                      </t>
+                  </t>
+              
+          </t>
+      </template>
+<!--
+        <template id="listing">
+          <ul>
+            <li t-foreach="objects" t-as="object">
+              <a t-attf-href="#{ root }/objects/#{ object.id }">
+                <t t-esc="object.display_name"/>
+              </a>
+            </li>
+          </ul>
+        </template>
+        <template id="object">
+          <h1><t t-esc="object.display_name"/></h1>
+          <dl>
+            <t t-foreach="object._fields" t-as="field">
+              <dt><t t-esc="field"/></dt>
+              <dd><t t-esc="object[field]"/></dd>
+            </t>
+          </dl>
+        </template>
+-->
+    </data>
+</odoo>
